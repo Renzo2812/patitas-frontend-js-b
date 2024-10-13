@@ -1,10 +1,22 @@
 window.addEventListener('load', function() {
 
+    const msgSuccess = this.document.getElementById('msgSuccess');
     const btnCerrarSesion = this.document.getElementById('btnCerrarSesion');
+
+    // recuperar nombre de usuario
+    const result = JSON.parse(this.localStorage.getItem('result'));
+
+    // mostrar nombre de usuario en alerta
+    mostrarAlerta(`Bienvenido ${result.nombreUsuario}`, msgSuccess);
 
     // listener para cerrar sesión
     btnCerrarSesion.addEventListener('click', cerrarSesion);
 });
+
+function mostrarAlerta(mensaje, msgSuccess) {
+    msgSuccess.innerHTML = mensaje;
+    msgSuccess.style.display = 'block';
+}
 
 async function cerrarSesion() {
 

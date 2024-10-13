@@ -25,10 +25,9 @@ window.addEventListener('load', function(){
         }
         ocultarAlerta();
         autenticar();
-
     });
-
 });
+
 
 function mostrarAlerta(mensaje) {
     msgError.innerHTML = mensaje;
